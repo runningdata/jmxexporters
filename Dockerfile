@@ -1,6 +1,6 @@
 FROM maven:3-ibmjava-8-alpine as jar_builder
 RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories && apk update && apk upgrade && \
-    apk add --no-cache bash git && git clone https://github.com/prometheus/jmx_exporter.git && cd jmx_exporter && mvn -skipTests clean package 
+    apk add --no-cache bash git && git clone https://github.com/prometheus/jmx_exporter.git && cd jmx_exporter && mvn package 
 
 
 
