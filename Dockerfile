@@ -22,6 +22,6 @@ RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories &
 COPY /kafka_sample.yaml .
 COPY /zookeeper_sample.yaml .
 COPY /flume_sample.yaml .
-COPY --from=builder /jmx_exporter/jmx_prometheus_httpserver/target/jmx_prometheus_httpserver-0.11-SNAPSHOT-jar-with-dependencies.jar /jmx_prometheus_httpserver.jar
+COPY --from=jar_builder /jmx_exporter/jmx_prometheus_httpserver/target/jmx_prometheus_httpserver-0.11-SNAPSHOT-jar-with-dependencies.jar /jmx_prometheus_httpserver.jar
 COPY /entrypoint.sh .
 ENTRYPOINT ["sh", "entrypoint.sh"]
