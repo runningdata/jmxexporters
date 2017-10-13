@@ -22,6 +22,8 @@ RUN    apk add --no-cache bash
 COPY /kafka_sample.yaml .
 COPY /zookeeper_sample.yaml .
 COPY /flume_sample.yaml .
+COPY /tomcat_sample.yaml .
+COPY /azkaban_sample.yaml .
 COPY --from=jar_builder /jmx_exporter/jmx_prometheus_httpserver/target/jmx_prometheus_httpserver-0.11-SNAPSHOT-jar-with-dependencies.jar /jmx_prometheus_httpserver.jar
 COPY /entrypoint.sh .
 ENTRYPOINT ["sh", "entrypoint.sh"]
