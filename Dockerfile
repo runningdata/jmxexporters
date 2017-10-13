@@ -17,8 +17,8 @@ RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories &
 
 FROM java:openjdk-8-jre-alpine
 MAINTAINER  Will Chen <willcup@163.com>
-RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories && apk update && apk upgrade && \
-    apk add --no-cache bash
+# RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories && apk update && apk upgrade && \
+RUN    apk add --no-cache bash
 COPY /kafka_sample.yaml .
 COPY /zookeeper_sample.yaml .
 COPY /flume_sample.yaml .
